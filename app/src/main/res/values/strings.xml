@@ -10,4 +10,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="default_name">Galaxies in Pegasus</string>
+    <string name="default_date">2020-10-15</string>
+    <string name="default_content">This sharp telescopic view reveals galaxies scattered beyond the stars of the Milky Way, at the northern boundary of the high-flying constellation Pegasus. Prominent at the upper right is NGC 7331. A mere 50 million light-years away, the large spiral is one of the brighter galaxies not included in Charles Messier\'s famous 18th century catalog. The disturbed looking group of galaxies at the lower left is well-known as Stephan\'s Quintet. About 300 million light-years distant, the quintet dramatically illustrates a multiple galaxy collision, its powerful, ongoing interactions posed for a brief cosmic snapshot. On the sky, the quintet and NGC 7331 are separated by about half a degree.</string>
+    <string name="default_copyright">Copyright by Robert Eder</string>
 </resources>

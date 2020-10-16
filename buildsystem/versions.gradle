@@ -1,0 +1,176 @@
+/*
+ * Copyright (C) 2018 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+
+/**
+ * Shared file between builds so that they can all use the same dependencies and
+ * maven repositories.
+ **/
+
+ext.deps = [:]
+def versions = [:]
+// component
+versions.recyclerview = "1.1.0-beta04"
+versions.cardview = "1.0.0"
+versions.swiperefreshlayout = "1.0.0"
+versions.material = "1.1.0-alpha10"
+versions.constraintlayout = "2.0.1"
+
+// support
+versions.annotation = "1.0.0"
+versions.appcompat = "1.1.0"
+//androidx.swiperefreshlayout.widget
+
+versions.room = "2.1.0-alpha01"
+versions.lifecycle = "2.1.0"
+versions.dagger = "2.24"
+versions.junit = "4.12"
+versions.espresso = "3.2.0-alpha04"
+versions.retrofit = "2.6.2"
+versions.okhttp_logging_interceptor = "4.2.2"
+versions.glide = "4.11.0"
+versions.atsl_runner = "1.1.0"
+versions.atsl_rules = "1.2.0-alpha04"
+versions.gson = "2.8.5"
+versions.amazonaws = "2.16.1" // 2.16.1
+versions.firebase_analytics = "17.2.1"
+versions.firebase_crashlytics = "2.10.1"
+versions.firebase_config = "19.0.3"
+versions.firebase_core = "17.2.1"
+versions.database = "19.2.1"
+versions.mokito = "2.7.22"
+versions.worker = "1.0.0"
+versions.vlc = "3.1.12"
+versions.multidex = "1.0.3"
+versions.work_manager="2.3.4"
+versions.exoplayer="2.10.5"
+versions.xtenframework="1.0.2"
+versions.admob = "19.0.1"
+
+def deps = [:]
+
+def support = [:]
+support.annotation = "androidx.annotation:annotation:$versions.annotation"
+support.appcompat = "androidx.appcompat:appcompat:$versions.appcompat"
+support.recyclerview = "androidx.recyclerview:recyclerview:$versions.recyclerview"
+support.cardview = "androidx.cardview:cardview:$versions.cardview"
+support.material = "com.google.android.material:material:$versions.material"
+support.constraintlayout = "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+support.swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$versions.swiperefreshlayout"
+deps.support = support
+
+def room = [:]
+room.runtime = "androidx.room:room-runtime:$versions.room"
+room.compiler = "androidx.room:room-compiler:$versions.room"
+room.rxjava2 = "androidx.room:room-rxjava2:$versions.room"
+room.testing = "androidx.room:room-testing:$versions.room"
+deps.room = room
+
+def lifecycle = [:]
+lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
+lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+deps.lifecycle = lifecycle
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.xml = "com.squareup.retrofit2:converter-simplexml:$versions.retrofit"
+retrofit.rxjava = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+retrofit.mock = "com.squareup.retrofit2:retrofit-mock:$versions.retrofit"
+retrofit.scalar = "com.squareup.retrofit2:converter-scalars:$versions.retrofit"
+deps.retrofit = retrofit
+deps.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${versions.okhttp_logging_interceptor}"
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_support_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+deps.dagger = dagger
+
+def espresso = [:]
+espresso.core = "androidx.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "androidx.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "androidx.test.espresso:espresso-intents:$versions.espresso"
+deps.espresso = espresso
+
+def atsl = [:]
+atsl.runner = "androidx.test.ext:junit:$versions.atsl_runner"
+atsl.core = "androidx.test:core:$versions.atsl_runner"
+atsl.rules = "androidx.test:rules:1.2.0"
+deps.atsl = atsl
+
+def amazonaws = [:]
+amazonaws.sdk = "com.amazonaws:aws-android-sdk-s3:$versions.amazonaws"
+amazonaws.cognito = "com.amazonaws:aws-android-sdk-cognito:$versions.amazonaws"
+amazonaws.mobileclient = "com.amazonaws:aws-android-sdk-mobile-client:$versions.amazonaws"
+deps.amazonaws = amazonaws
+
+def firebase = [:]
+firebase.analytics = "com.google.firebase:firebase-analytics:$versions.firebase_analytics"
+firebase.crashlytics = "com.crashlytics.sdk.android:crashlytics:$versions.firebase_crashlytics"
+firebase.config = "com.google.firebase:firebase-config:$versions.firebase_config"
+firebase.core = "com.google.firebase:firebase-core:$versions.firebase_core"
+firebase.database = "com.google.firebase:firebase-database:$versions.database"
+firebase.admob = "com.google.android.gms:play-services-ads:$versions.admob"
+firebase.storage = "com.google.firebase:firebase-storage:19.1.1"
+firebase.auth = "com.google.firebase:firebase-auth:19.3.0"
+deps.firebase = firebase
+
+def mokito = [:]
+mokito.core = "org.mockito:mockito-core:$versions.mokito"
+mokito.test = "org.mockito:mockito-android:$versions.mokito"
+deps.mokito = mokito
+
+def worker = [:]
+worker.runtime = "android.arch.work:work-runtime:$versions.worker"
+deps.worker = worker
+
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
+
+def exoplayer = [:]
+exoplayer.core = "com.google.android.exoplayer:exoplayer-core:$versions.exoplayer"
+exoplayer.dash = "com.google.android.exoplayer:exoplayer-dash:$versions.exoplayer"
+exoplayer.ui = "com.google.android.exoplayer:exoplayer-ui:$versions.exoplayer"
+deps.exoplayer = exoplayer
+
+deps.junit = "junit:junit:$versions.junit"
+deps.gson = "com.google.code.gson:gson:$versions.gson"
+deps.vlc = "org.videolan.android:libvlc-all:$versions.vlc"
+deps.multidex = "com.android.support:multidex:$versions.multidex"
+deps.work_manager="androidx.work:work-runtime:$versions.workmanager"
+deps.xtenframework="com.xtensolution.support:xten-framework:$versions.xtenframework"
+deps.universalimageloader = "com.nostra13.universalimageloader:universal-image-loader:1.9.5"
+
+ext.deps = deps
+
+def addRepos(RepositoryHandler handler) {
+    handler.google()
+    handler.jcenter()
+    handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+//    handler.maven {
+//        url 'https://maven.fabric.io/public'
+//    }
+}
+
+ext.addRepos = this.&addRepos
