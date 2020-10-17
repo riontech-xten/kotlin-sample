@@ -1,3 +1,8 @@
 # kotlin-sample
-\#kotili, \#Retrofit, \#Glide, \#DataBinding, \#Unit Testing 
-Some android basic component example using kotlin
+ 
+This example containt the following implementation
+#### Kotlin 
+#### Retrofit
+#### Glide
+#### Data Binding
+#### Unit Testing
