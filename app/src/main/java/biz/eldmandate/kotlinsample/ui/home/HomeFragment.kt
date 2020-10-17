@@ -1,6 +1,7 @@
 package biz.eldmandate.kotlinsample.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
         homeBinding.progressBar.visibility = View.VISIBLE;
         homeViewModel.getNasaApodData(getString(R.string.api_key)).observe(viewLifecycleOwner, {
             if (it != null) {
+                Log.d("HomeFragment", "loadData: " + it.toString())
                 homeBinding.progressBar.visibility = View.GONE
                 homeBinding.apod = it;
                 homeBinding.executePendingBindings()

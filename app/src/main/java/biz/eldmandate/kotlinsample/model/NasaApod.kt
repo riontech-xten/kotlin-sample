@@ -1,5 +1,6 @@
 package biz.eldmandate.kotlinsample.model
 
+import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
 
 
@@ -23,4 +24,8 @@ class NasaApod {
     var title: String? = null
 
     var url: String? = null
+
+    override fun toString(): String {
+        return Gson().toJson(this)
+    }
 }
