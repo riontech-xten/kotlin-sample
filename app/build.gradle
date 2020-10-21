@@ -43,6 +43,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -71,6 +75,11 @@ dependencies {
     kapt "com.android.databinding:compiler:3.1.4"
 
     testImplementation deps.junit
+    // Mockito
+    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.0.0-RC3'
+    testImplementation deps.mockito.inline
+    testImplementation deps.mockito.core
+    testImplementation "android.arch.core:core-testing:1.1.1"
     androidTestImplementation deps.atsl.runner
     androidTestImplementation deps.espresso.core
 }

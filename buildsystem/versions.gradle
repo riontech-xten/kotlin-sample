@@ -51,7 +51,7 @@ versions.firebase_crashlytics = "2.10.1"
 versions.firebase_config = "19.0.3"
 versions.firebase_core = "17.2.1"
 versions.database = "19.2.1"
-versions.mokito = "2.7.22"
+versions.mockito = "2.13.0"
 versions.worker = "1.0.0"
 versions.vlc = "3.1.12"
 versions.multidex = "1.0.3"
@@ -134,10 +134,11 @@ firebase.storage = "com.google.firebase:firebase-storage:19.1.1"
 firebase.auth = "com.google.firebase:firebase-auth:19.3.0"
 deps.firebase = firebase
 
-def mokito = [:]
-mokito.core = "org.mockito:mockito-core:$versions.mokito"
-mokito.test = "org.mockito:mockito-android:$versions.mokito"
-deps.mokito = mokito
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.inline = "org.mockito:mockito-inline:$versions.mockito"
+mockito.test = "org.mockito:mockito-android:$versions.mockito"
+deps.mockito = mockito
 
 def worker = [:]
 worker.runtime = "android.arch.work:work-runtime:$versions.worker"
