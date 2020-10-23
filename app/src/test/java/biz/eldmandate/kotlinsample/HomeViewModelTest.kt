@@ -83,7 +83,7 @@ class HomeViewModelTest {
         val spiedViewModel = com.nhaarman.mockitokotlin2.spy(this.homeViewModel)
 
         spiedViewModel.getNasaApodData(ArgumentMatchers.anyString())
-        verify(spiedViewModel, times(2)).setLoadingVisibility(ArgumentMatchers.anyBoolean())
+        verify(spiedViewModel, times(1)).setLoadingVisibility(ArgumentMatchers.anyBoolean())
     }
 
     @Test
